@@ -1,0 +1,513 @@
+// Imports
+import ___CSS_LOADER_API_SOURCEMAP_IMPORT___ from "../node_modules/css-loader/dist/runtime/sourceMaps.js";
+import ___CSS_LOADER_API_IMPORT___ from "../node_modules/css-loader/dist/runtime/api.js";
+var ___CSS_LOADER_EXPORT___=___CSS_LOADER_API_IMPORT___(___CSS_LOADER_API_SOURCEMAP_IMPORT___);
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, `
+/* Basic styles for the body */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #e0e0e0;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Ensure the body takes full height */
+    box-sizing: border-box;
+}
+
+/* Image container styling */
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #e0e0e0;
+    padding: 5%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    max-width: 500px;
+    width: 90%;
+    margin-top: 5%;
+}
+
+#warningButton {
+    width: 100%;
+    /* Ensures the image fits container */
+    height: auto;
+    /* Keeps the aspect ratio */
+    border-radius: 10px;
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+
+/* Button styling */
+
+.enter-button {
+    font-size: 20px;
+    padding: 15px 30px;
+    background-color: #051457;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.enter-button:hover {
+    background-color: #061558;
+}
+
+/* Ensuring smooth transition between loading and main content */
+
+#content {
+    display: none;
+}
+
+/* Centered content styling */
+
+#content.content {
+    display: block;
+    width: 100%;
+    max-width: 900px;
+    padding: 20px;
+    margin-top: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+footer {
+    text-align: center;
+    padding: 10px 20px;
+    background: #e0e0e0;
+    color: #000;
+    font-weight: bold;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+/* Contract container styling */
+
+.contract-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    text-align: center;
+}
+
+.contract-container a {
+    text-decoration: none;
+    /* Remove underline */
+}
+
+.social-media-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.social-media-container a {
+    color: #06195e;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    margin-top: 15px;
+}
+
+.social-media-container a.tg-icon {
+    color: #007bff;
+}
+
+.social-media-container a.twitter-icon {
+    color: #1DA1F2;
+}
+
+.social-media-container img.social-icon {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+}
+
+.contract-address {
+    font-size: 1rem;
+    background: #06195e;
+    padding: 10px;
+    border-radius: 5px;
+    word-wrap: break-word;
+    width: 90%;
+    max-width: 500px;
+    margin-bottom: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+.copy-button {
+    background: #06195e;
+    border: none;
+    padding: 10px 15px;
+    color: #fff;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.copy-button:hover {
+    background: #007bff;
+}
+
+/* Meet the team styling */
+
+.meet-the-team {
+    background-color: #e0e0e0;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.team-members {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    width: 100px;
+    text-align: center;
+}
+
+.team-member img {
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+}
+
+.team-member h3 {
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+.team-member p {
+    font-size: 0.8em;
+    color: #666;
+}
+
+.memes {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.memes h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.meme-images {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-image {
+    width: 400px;
+    /* Increased width */
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    margin: 0 10px;
+}
+
+.carousel-image.active {
+    opacity: 1;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.carousel-image {
+    animation: fadeIn 1s forwards;
+}
+
+/* Popup modal styling */
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.popup-content {
+    position: relative;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 80%;
+    max-height: 80%;
+    overflow: auto;
+}
+
+.popup-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.close-popup {
+    position: absolute;
+    top: -10px;
+    right: 1px;
+    background-color: transparent;
+    color: red;
+    font-weight: bold;
+    font-size: 1.3rem;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 25%;
+}
+
+.close-popup:hover {
+    background-color: darkred;
+}
+
+/* Main content styling */
+
+.main {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    background: #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+.main h2 {
+    color: #847964;
+    font-size: 2rem;
+    margin-top: 0;
+}
+
+/* Whitepaper section */
+
+.whitepaper p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* Remove bullet points and list styling */
+
+.whitepaper ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.whitepaper li {
+    padding-left: 0;
+    margin-bottom: 10px;
+}
+
+/* Remove horizontal lines */
+
+.whitepaper hr {
+    display: none;
+}
+
+/* Responsive styles for header */
+
+header {
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    border-radius: 10px;
+}
+
+header img {
+    width: 85%;
+    height: auto;
+    max-width: 100%;
+    /* Adjust width for smaller screens */
+    border-radius: 10px;
+    margin-right: 5%;
+}
+
+/* Media Queries for Mobile Responsiveness */
+
+@media (max-width: 768px) {
+    .enter-button {
+        font-size: 18px;
+        padding: 12px 24px;
+    }
+    .main h2 {
+        font-size: 1.8rem;
+        /* Smaller headings */
+    }
+    .contract-address {
+        font-size: 0.9rem;
+        max-width: 90%;
+    }
+    /* Adjust image size in the container */
+    #warningButton {
+        width: 100%;
+        height: auto;
+    }
+    .team-member img {
+        width: 80px;
+        /* Smaller images */
+        height: 80px;
+    }
+}
+
+/* For very small screens like mobile */
+
+@media (max-width: 480px) {
+    body {
+        padding: 0 10px;
+    }
+    .image-container {
+        margin-top: 10%;
+        padding: 10px;
+    }
+    .enter-button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+    .main {
+        padding: 10px;
+        width: 100%;
+        margin-left: 15%;
+    }
+    .whitepaper {
+        margin-left: 15%;
+    }
+    .meet-the-team {
+        background-color: #e0e0e0;
+        padding: 20px;
+        text-align: center;
+        border-radius: 10px;
+        margin-left: 5%;
+    }
+    .team-member {
+        width: 80px;
+        /* More compact */
+    }
+    .team-member img {
+        width: 70px;
+        height: 70px;
+    }
+    footer {
+        padding: 8px 10px;
+        font-size: 0.8rem;
+    }
+    header img {
+        width: 90%;
+        max-width: 100%;
+        margin-right: 8%;
+    }
+}
+
+/* For extra small screens (375px and below) */
+
+@media (max-width: 375px) {
+    body {
+        padding: 0 5px;
+    }
+    .social-media-container {
+        margin-left: 11%;
+    }
+    .contract-container {
+        margin-left: 15%;
+    }
+    .image-container {
+        margin-top: 8%;
+        padding: 5px;
+    }
+    .enter-button {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+    .main {
+        padding: 5px;
+        width: 100%;
+    }
+    .memes {
+        text-align: center;
+        margin-top: 20px;
+        margin-left: 10%;
+    }
+    .whitepaper {
+        .contract-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+            text-align: center;
+        }
+    }
+    .meet-the-team {
+        background-color: #e0e0e0;
+        padding: 20px;
+        text-align: center;
+        border-radius: 10px;
+        margin-left: 10%;
+    }
+    .team-member {
+        width: 60px;
+    }
+    .team-member img {
+        width: 50px;
+        height: 50px;
+    }
+    footer {
+        padding: 5px 8px;
+        font-size: 0.7rem;
+    }
+    .contract-address {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+    header img {
+        width: 80%;
+        margin-left: 10%;
+    }
+}
+
+`, "", {
+    "version": 3, "sources":["webpack://./src/App.css"], "names":[], "mappings":"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", "sourcesContent":["/* Basic styles for the body */\nbody {\n  font-family: Arial, sans-serif;\n  margin: 0;\n  padding: 0;\n  background: #e0e0e0;\n  color: #333;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  min-height: 100vh; /* Ensure the body takes full height */\n  box-sizing: border-box;\n}\n\n/* Image container styling */\n.image-container {\n  display: flex;\n  justify-content: center;\n  flex-direction: column;\n  align-items: center;\n  text-align: center;\n  background-color: #e0e0e0;\n  padding: 5%;\n  border-radius: 10px;\n  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);\n  max-width: 500px;\n  width: 90%;\n  margin-top: 5%;\n}\n\n#warningButton {\n  width: 100%;         /* Ensures the image fits container */\n  height: auto;        /* Keeps the aspect ratio */\n  border-radius: 10px;\n  margin-bottom: 20px;\n  object-fit: cover;\n}\n\n/* Button styling */\n.enter-button {\n  font-size: 20px;\n  padding: 15px 30px;\n  background-color: #051457;\n  border: none;\n  color: #fff;\n  font-weight: bold;\n  cursor: pointer;\n  border-radius: 5px;\n  transition: background-color 0.3s;\n}\n\n.enter-button:hover {\n  background-color: #061558;\n}\n\n/* Ensuring smooth transition between loading and main content */\n#content {\n  display: none;\n}\n\n/* Centered content styling */\n#content.content {\n  display: block;\n  width: 100%;\n  max-width: 900px;\n  padding: 20px;\n  margin-top: 20px;\n  background: #fff;\n  border-radius: 10px;\n  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);\n}\n\nfooter {\n  text-align: center;\n  padding: 10px 20px;\n  background: #e0e0e0;\n  color: #000;\n  font-weight: bold;\n  margin-top: 20px;\n  border-radius: 10px;\n}\n\n/* Contract container styling */\n.contract-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin: 20px;\n  text-align: center;\n}\n\n.contract-container a {\n  text-decoration: none; /* Remove underline */\n}\n\n.social-media-container {\n  display: flex;\n  justify-content: center;\n  gap: 20px;\n  margin-bottom: 15px;\n}\n\n.social-media-container a {\n  color: #06195e;\n  text-decoration: none;\n  transition: color 0.3s ease;\n  margin-top: 15px;\n}\n\n.social-media-container a.tg-icon {\n  color: #007bff;\n}\n\n.social-media-container a.twitter-icon {\n  color: #1DA1F2;\n}\n\n.social-media-container img.social-icon {\n  width: 30px;\n  height: 30px;\n  vertical-align: middle;\n}\n\n.contract-address {\n  font-size: 1rem;\n  background: #06195e;\n  padding: 10px;\n  border-radius: 5px;\n  word-wrap: break-word;\n  width: 90%;\n  max-width: 500px;\n  margin-bottom: 10px;\n  color: white;\n  font-weight: bold;\n}\n\n.copy-button {\n  background: #06195e;\n  border: none;\n  padding: 10px 15px;\n  color: #fff;\n  font-size: 0.9rem;\n  cursor: pointer;\n  border-radius: 5px;\n  margin-top: 15px;\n}\n\n.copy-button:hover {\n  background: #007bff;\n}\n\n/* Meet the team styling */\n.meet-the-team {\n  background-color: #e0e0e0;\n  padding: 20px;\n  text-align: center;\n  border-radius: 10px;\n}\n\n.team-members {\n  display: flex;\n  justify-content: center;\n  gap: 20px;\n  flex-wrap: wrap;\n}\n\n.team-member {\n  width: 100px;\n  text-align: center;\n}\n\n.team-member img {\n  border-radius: 50%;\n  width: 90px;\n  height: 90px;\n  object-fit: cover;\n}\n\n.team-member h3 {\n  font-size: 0.9em;\n  margin-top: 5px;\n}\n\n.team-member p {\n  font-size: 0.8em;\n  color: #666;\n}\n\n.memes {\n  text-align: center;\n  margin-top: 20px;\n}\n\n.memes h2 {\n  font-size: 1.5rem;\n  color: #333;\n  margin-bottom: 15px;\n}\n\n.meme-images {\n  display: flex;\n  justify-content: center;\n  overflow: hidden;\n  position: relative;\n}\n\n.carousel-image {\n  width: 400px; /* Increased width */\n  height: auto;\n  border-radius: 8px;\n  object-fit: cover;\n  opacity: 0;\n  transition: opacity 0.5s ease-in-out;\n  margin: 0 10px;\n}\n\n.carousel-image.active {\n  opacity: 1;\n}\n\n@keyframes fadeIn {\n  from {\n    opacity: 0;\n  }\n  to {\n    opacity: 1;\n  }\n}\n\n.carousel-image {\n  animation: fadeIn 1s forwards;\n}\n\n/* Popup modal styling */\n.popup {\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background-color: rgba(0, 0, 0, 0.7);\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  z-index: 999;\n}\n\n.popup-content {\n  position: relative;\n  background-color: #fff;\n  padding: 20px;\n  border-radius: 10px;\n  max-width: 80%;\n  max-height: 80%;\n  overflow: auto;\n}\n\n.popup-content img {\n  width: 100%;\n  height: auto;\n  border-radius: 10px;\n}\n\n.close-popup {\n  position: absolute;\n  top: -10px;\n  right: 1px;\n  background-color: transparent;\n  color: red;\n  font-weight: bold;\n  font-size: 1.3rem;\n  border: none;\n  padding: 10px;\n  cursor: pointer;\n  border-radius: 25%;\n}\n\n.close-popup:hover {\n  background-color: darkred;\n}\n\n/* Main content styling */\n.main {\n  padding: 20px;\n  max-width: 900px;\n  margin: 0 auto;\n  background: #e0e0e0;\n  border-radius: 10px;\n  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);\n  color: #333;\n}\n\n.main h2 {\n  color: #847964;\n  font-size: 2rem;\n  margin-top: 0;\n}\n\n/* Whitepaper section */\n.whitepaper p {\n  margin-bottom: 15px;\n  line-height: 1.6;\n}\n\n/* Remove bullet points and list styling */\n.whitepaper ul {\n  list-style: none;\n  padding-left: 0;\n}\n\n.whitepaper li {\n  padding-left: 0;\n  margin-bottom: 10px;\n}\n\n/* Remove horizontal lines */\n.whitepaper hr {\n  display: none;\n}\n\n/* Responsive styles for header */\nheader {\n  padding: 20px;\n  text-align: center;\n  width: 100%; \n  border-radius: 10px;\n}\n\nheader img {\n  width: 85%;\n  height: auto;\n  max-width: 100%; /* Adjust width for smaller screens */\n  border-radius: 10px;\n  margin-right: 5%;\n}\n\n/* Media Queries for Mobile Responsiveness */\n@media (max-width: 768px) {\n  .enter-button {\n    font-size: 18px;\n    padding: 12px 24px;\n  }\n\n  .main h2 {\n    font-size: 1.8rem; /* Smaller headings */\n  }\n\n  .contract-address {\n    font-size: 0.9rem;\n    max-width: 90%;\n  }\n\n  /* Adjust image size in the container */\n  #warningButton {\n    width: 100%;\n    height: auto;\n  }\n\n  .team-member img {\n    width: 80px; /* Smaller images */\n    height: 80px;\n  }\n}\n\n/* For very small screens like mobile */\n@media (max-width: 480px) {\n  body {\n    padding: 0 10px;\n  }\n\n  .image-container {\n    margin-top: 10%;\n    padding: 10px;\n  }\n\n  .enter-button {\n    font-size: 16px;\n    padding: 10px 20px;\n  }\n\n  .main {\n    padding: 10px;\n    width: 100%;\n    margin-left: 15%;\n  }\n\n.whitepaper {\n  margin-left: 15%;\n}\n\n.meet-the-team {\n  background-color: #e0e0e0;\n  padding: 20px;\n  text-align: center;\n  border-radius: 10px;\n  margin-left: 5%;\n}\n\n  .team-member {\n    width: 80px; /* More compact */\n  }\n\n  .team-member img {\n    width: 70px;\n    height: 70px;\n  }\n\n  footer {\n    padding: 8px 10px;\n    font-size: 0.8rem;\n  }\n\n  header img {\n    width: 90%;\n    max-width: 100%;\n   margin-right: 8%;\n  }\n}\n\n/* For extra small screens (375px and below) */\n@media (max-width: 375px) {\n  body {\n    padding: 0 5px;\n  }\n\n.social-media-container {\n  margin-left: 11%;\n}\n\n.contract-container {\n  margin-left: 15%;\n}\n\n  .image-container {\n    margin-top: 8%;\n    padding: 5px;\n  }\n\n  .enter-button {\n    font-size: 12px;\n    padding: 8px 16px;\n  }\n\n  .main {\n    padding: 5px;\n    width: 100%;\n  }\n\n.memes {\n  text-align: center;\n  margin-top: 20px;\n  margin-left: 10%;\n}\n\n.whitepaper {\n.contract-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin: 20px;\n  text-align: center;\n}\n}\n\n.meet-the-team {\n  background-color: #e0e0e0;\n  padding: 20px;\n  text-align: center;\n  border-radius: 10px;\n  margin-left: 10%;\n}\n\n  .team-member {\n    width: 60px;\n  }\n\n  .team-member img {\n    width: 50px;\n    height: 50px;\n  }\n\n  footer {\n    padding: 5px 8px;\n    font-size: 0.7rem;\n  }\n\n  .contract-address {\n    font-size: 0.8rem;\n    padding: 8px;\n  }\n\n  header img {\n    width: 80%;\n  margin-left: 10%;\n  }\n}"], "sourceRoot":""
+}
+
+]);
+// Exports
+___CSS_LOADER_EXPORT___.locals= {}
+
+;
+export default ___CSS_LOADER_EXPORT___;
